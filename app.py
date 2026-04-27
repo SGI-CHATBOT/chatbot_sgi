@@ -28,7 +28,8 @@ if prompt := st.chat_input("제미나이에게 무엇이든 물어보세요!"):
         message_placeholder = st.empty()
         full_response = ""
         
-        system_instruction = f"너는 사용자가 제공한 참고자료만을 바탕으로 답변하는 챗봇이야. 자료에 없는 내용은 모른다고 답변해줘.\n\n[참고자료]\n{custom_knowledge}"
+        system_instruction = f"""너는 사용자가 제공한 참고자료만을 바탕으로 답변하는 챗봇이야. 자료에 없는 내용은 모른다고 답변해줘.
+        [답변 시 참고사항]은 너만 알면 되는 부분이니까 안내에는 사용하지마.\n\n[참고자료]\n{custom_knowledge}"""
         
         # 🔥 에러 해결의 핵심 부분!
         formatted_messages = []
