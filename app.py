@@ -49,19 +49,4 @@ if prompt := st.chat_input("예시 : 외감기업인데, 재무제표 입수 언
                 full_response += chunk.text
                 message_placeholder.markdown(full_response + "▌")
                 
-        message_placeholder.markdown(full_response)
-        unanswered_keywords = ["학습하지 못한", "참고자료에 없는", "모른다고"]
-        
-        if any(keyword in full_response for keyword in unanswered_keywords):
-            # Specify the file path to record (same location as knowledge.txt)
-            log_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "unanswered.txt")
-            
-            # Formatting the current time and the user's question
-            current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-            log_entry = f"[{current_time}] 질문: {prompt}\n"
-            
-            # Append to file
-            with open(log_path, "a", encoding="utf-8") as f:
-                f.write(log_entry)
-                
     st.session_state.messages.append({"role": "assistant", "content": full_response})
