@@ -3,7 +3,7 @@ from google import genai
 
 st.title("💬 제미나이 코랩 챗봇")
 
-GEMINI_API_KEY = "AIzaSyDThq-NgIrXyeMPBEQAX3Rgs-TcGg8wu0w"
+GEMINI_API_KEY = "AIzaSyBh0CJKoMlkWRcQWLuFsSQsm6sd33Gwjc8"
 client = genai.Client(api_key=GEMINI_API_KEY)
 
 try:
