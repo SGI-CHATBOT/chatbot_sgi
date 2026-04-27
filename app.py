@@ -1,13 +1,13 @@
 import streamlit as st
 from google import genai
 
-st.title("💬 제미나이 코랩 챗봇")
+st.title("😊 재무제표 입수 프로세스 챗봇")
 
 GEMINI_API_KEY = st.secrets["GEMINI_API_KEY"]
 client = genai.Client(api_key=GEMINI_API_KEY)
 
 try:
-    with open("knowledge.txt", "r", encoding="utf-8") as f:
+    with open("knowledge_v1.txt", "r", encoding="utf-8") as f:
         custom_knowledge = f.read()
 except FileNotFoundError:
     custom_knowledge = "별도의 전용 학습 데이터가 없습니다."
